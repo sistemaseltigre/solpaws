@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool _hasWallet = false;
 
-   @override
+  @override
   void initState() {
     super.initState();
     createOrLoadWallet();
@@ -81,7 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: const TextStyle(fontSize: 10.0),
                     ),
                     ElevatedButton(
-                      onPressed: () => Navigator.pushNamed(context, '/menu'),
+                      onPressed: () => Navigator.pushNamed(context, '/menu',arguments: {
+                        'publicKey': mainWalletPublicKey,
+                        'mainWallet': mainWallet,
+                        'balance': balance,
+                        },
+                      ),
                       child: const Text("Play"),
                     ),
                   ],
