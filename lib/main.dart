@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:solana_web3/solana_web3.dart' as web3;
 import 'package:solpaws/pages/menu/menu.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: "assets/.env");
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -29,16 +30,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   const MyHomePage({super.key});
-  
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   bool _hasWallet = false;
 
   @override
@@ -46,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     createOrLoadWallet();
   }
+
   //Main variables
   final storage = const FlutterSecureStorage();
   static const String solanaWalletKeyFlutterStorage = 'solana_solpaws_wallet';
@@ -55,8 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
   final connection = web3.Connection(web3.Cluster.devnet);
   bool _creatingWallet = false;
 
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,10 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: const TextStyle(fontSize: 10.0),
                     ),
                     ElevatedButton(
-                      onPressed: () => Navigator.pushNamed(context, '/menu',arguments: {
-                        'publicKey': mainWalletPublicKey,
-                        'mainWallet': mainWallet,
-                        'balance': balance,
+                      onPressed: () => Navigator.pushNamed(
+                        context,
+                        '/menu',
+                        arguments: {
+                          'publicKey': mainWalletPublicKey,
+                          'mainWallet': mainWallet,
+                          'balance': balance,
                         },
                       ),
                       child: const Text("Play"),
@@ -103,29 +103,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     createOrLoadWallet(); // Call the function to create/load the wallet
                   },
                 ),
-        ),     
+        ),
       ),
     );
   }
 
   //Load or create wallet
-   Future<void> createOrLoadWallet() async {  
-    
+  Future<void> createOrLoadWallet() async {
     // Get main wallet key from storage
-    final mainWalletKey = await storage.read(key: solanaWalletKeyFlutterStorage);
+    final mainWalletKey =
+        await storage.read(key: solanaWalletKeyFlutterStorage);
 
-    if (mainWalletKey != "" && mainWalletKey != null) {      
-
+    if (mainWalletKey != "" && mainWalletKey != null) {
       // Decode key
       final decodeKey = web3.base58Decode(mainWalletKey);
-    
+
       // Get private key 32 bytes
       final privKeyBytes = decodeKey.sublist(decodeKey.length - 32);
 
       // Create wallet
-      mainWallet = web3.Keypair.fromSeedSync(privKeyBytes);  
-
-    }else{
+      mainWallet = web3.Keypair.fromSeedSync(privKeyBytes);
+    } else {
       // Create wallet
       final mainWalletTmp = web3.Keypair.generateSync();
 
@@ -136,30 +134,27 @@ class _MyHomePageState extends State<MyHomePage> {
       );
 
       // Get main wallet key from storage
-      final mainWalletKeyTmp = await storage.read(key: solanaWalletKeyFlutterStorage);
+      final mainWalletKeyTmp =
+          await storage.read(key: solanaWalletKeyFlutterStorage);
 
       // Decode key
       final decodeKeyTmp = web3.base58Decode(mainWalletKeyTmp!);
-    
+
       // Get private key 32 bytes
       final privKeyBytesTmp = decodeKeyTmp.sublist(decodeKeyTmp.length - 32);
 
       // Create wallet
-      mainWallet = web3.Keypair.fromSeedSync(privKeyBytesTmp);  
-
+      mainWallet = web3.Keypair.fromSeedSync(privKeyBytesTmp);
     }
 
-
-      
     // Get public key
     mainWalletPublicKey = mainWallet.publicKey.toBase58().toString();
-    
+
     // Get balance
-    balance = await connection.getBalance(mainWallet.publicKey)/web3.lamportsPerSol;
-    
+    balance =
+        await connection.getBalance(mainWallet.publicKey) / web3.lamportsPerSol;
+
     // Check if the main wallet key exists in storage
     _hasWallet = true;
-
   }
-
 }

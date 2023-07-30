@@ -5,7 +5,7 @@ import 'package:solana/solana.dart' as solana;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:solana/anchor.dart' as solana_anchor;
 import 'package:solana/encoder.dart' as solana_encoder;
-import 'anchor_types/nft_arguments.dart' as anchor_types;
+import '../menu/anchor_types/nft_arguments.dart' as anchor_types;
 import 'dart:math';
 import 'dart:convert';
 import 'package:flutter/services.dart';
