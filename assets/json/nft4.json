@@ -1,0 +1,41 @@
+{
+    "name": "#0004",
+    "symbol": "SPAWS",
+    "description": "Black WolfKittyDog - SolPaws #0004",
+    "image": "https://quicknode.myfilebase.com/ipfs/QmRLZp2iaf2chmBtAoEQFEHPfYGTTUtcGbcjmQPFrPP6He",
+    "attributes": [
+      {
+        "trait_type": "Lvl",
+        "value": "5"
+        
+      },
+      {
+        "trait_type": "Vitality",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Speed",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Food",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Love",
+        "value": "2"
+        
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "https://quicknode.myfilebase.com/ipfs/QmRLZp2iaf2chmBtAoEQFEHPfYGTTUtcGbcjmQPFrPP6He",
+          "type": "image/png"
+        }
+      ]
+    }
+  }

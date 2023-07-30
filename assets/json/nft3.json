@@ -1,0 +1,41 @@
+{
+    "name": "#0003",
+    "symbol": "SPAWS",
+    "description": "White KittyDog - SolPaws #0003",
+    "image": "https://quicknode.myfilebase.com/ipfs/QmSrX49NoV8WVHEDNfBXtwkHkinN6LqnPd4GJD7Nav3UZg/",
+    "attributes": [
+      {
+        "trait_type": "Lvl",
+        "value": "2"
+        
+      },
+      {
+        "trait_type": "Vitality",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Speed",
+        "value": "5"
+        
+      },
+      {
+        "trait_type": "Food",
+        "value": "2"
+        
+      },
+      {
+        "trait_type": "Love",
+        "value": "6"
+        
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "https://quicknode.myfilebase.com/ipfs/QmSrX49NoV8WVHEDNfBXtwkHkinN6LqnPd4GJD7Nav3UZg/",
+          "type": "image/png"
+        }
+      ]
+    }
+  }

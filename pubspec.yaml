@@ -27,3 +27,8 @@ flutter:
   uses-material-design: true
   assets:
   - assets/images/w.png
+  - assets/json/nft1.json
+  - assets/json/nft2.json
+  - assets/json/nft3.json
+  - assets/json/nft4.json
+  - assets/json/nft5.json

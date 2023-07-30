@@ -1,0 +1,41 @@
+{
+    "name": "#0001",
+    "symbol": "SPAWS",
+    "description": "Blue KittyDog - SolPaws #0001",
+    "image": "https://quicknode.myfilebase.com/ipfs/QmWWPf8GU88Bp9UZqGz5ECmheGnoBTgC6PWwhA54cSFU99/",
+    "attributes": [
+      {
+        "trait_type": "Lvl",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Vitality",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Speed",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Food",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Love",
+        "value": "5"
+        
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "https://quicknode.myfilebase.com/ipfs/QmWWPf8GU88Bp9UZqGz5ECmheGnoBTgC6PWwhA54cSFU99/",
+          "type": "image/png"
+        }
+      ]
+    }
+  }

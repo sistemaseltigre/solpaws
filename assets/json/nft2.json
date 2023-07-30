@@ -1,0 +1,41 @@
+{
+    "name": "#0002",
+    "symbol": "SPAWS",
+    "description": "White Mini KittyDog - SolPaws #0002",
+    "image": "https://quicknode.myfilebase.com/ipfs/QmXnMorgawMe96tXQFSi5KDHFYqi82miUFuNAsxVpVGCKC/",
+    "attributes": [
+      {
+        "trait_type": "Lvl",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Vitality",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Speed",
+        "value": "5"
+        
+      },
+      {
+        "trait_type": "Food",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Love",
+        "value": "7"
+        
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "https://quicknode.myfilebase.com/ipfs/QmXnMorgawMe96tXQFSi5KDHFYqi82miUFuNAsxVpVGCKC/",
+          "type": "image/png"
+        }
+      ]
+    }
+  }

@@ -1,6 +1,7 @@
 //Create menu view
 import 'package:flutter/material.dart';
 import 'package:solana_web3/solana_web3.dart' as web3;
+import 'package:solpaws/pages/menu/mint_nft.dart';
 
 class MenuPage extends StatefulWidget {
  
@@ -44,7 +45,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Lógica cuando se presiona el botón "Get SPaws"
+                createNft();
               },
               child: const Text("Get SPaws"),
             ),
