@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:solana/solana.dart' as solana;
+import 'package:solpaws/pages/my-spaws/nft_details_screen.dart';
 
 class NFT {
   final String name;
+  final String description;
   final String tokenAddress;
   final String collectionName;
   final String imageUrl;
@@ -17,6 +18,7 @@ class NFT {
 
   NFT({
     required this.name,
+    required this.description,
     required this.tokenAddress,
     required this.collectionName,
     required this.imageUrl,
@@ -30,6 +32,7 @@ class NFT {
   factory NFT.fromJson(Map<String, dynamic> json) {
     return NFT(
       name: json['name'],
+      description: json['description'] != null ? json['description'] : [],
       tokenAddress: json['tokenAddress'],
       collectionName: json['collectionName'],
       imageUrl: json['imageUrl'],
@@ -69,6 +72,7 @@ Future<List<NFT>> fetchNFTs(String walletAddress) async {
     final jsonData = json.decode(response.body);
     final assetsData = jsonData?['result']?['assets'] as List<dynamic>? ?? [];
     final nfts = assetsData.map((data) => NFT.fromJson(data)).toList();
+    print(assetsData);
     return nfts;
   } else {
     throw Exception('Failed to load NFTs');
@@ -119,8 +123,17 @@ class _NFTScreenState extends State<NFTScreen> {
               itemBuilder: (context, index) {
                 final nft = nfts![index];
                 return ListTile(
+                  onTap: () {
+                    // Navegar a la vista de detalles del NFT al hacer clic en la imagen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NFTDetailsScreen(nft: nft),
+                      ),
+                    );
+                  },
                   title: Text(nft.name),
-                  //subtitle: Text(nft.collectionName),
+                  subtitle: Text(nft.description),
                   leading: Image.network(nft.imageUrl),
                 );
               },

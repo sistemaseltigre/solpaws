@@ -1,0 +1,41 @@
+{
+    "name": "#0005",
+    "symbol": "SPAWS",
+    "description": "White BulgKittyDog - SolPaws #0005",
+    "image": "https://quicknode.myfilebase.com/ipfs/QmWG9pNYrbHQkWc1aZCAP192uo3LHhjV6PEicZUvy7jmVb/",
+    "attributes": [
+      {
+        "trait_type": "Lvl",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Vitality",
+        "value": "3"
+        
+      },
+      {
+        "trait_type": "Speed",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Food",
+        "value": "1"
+        
+      },
+      {
+        "trait_type": "Love",
+        "value": "9"
+        
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "https://quicknode.myfilebase.com/ipfs/QmWG9pNYrbHQkWc1aZCAP192uo3LHhjV6PEicZUvy7jmVb/",
+          "type": "image/png"
+        }
+      ]
+    }
+  }
